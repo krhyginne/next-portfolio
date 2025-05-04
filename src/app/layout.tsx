@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter} from "next/font/google";
 import "./globals.css";
+
+// UI that is shared between multiple pages
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
