@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
-import HeroSection from '@/components/hero';
-import Navbar from '@/components/navbar';
+import HeroSection from './components/hero';
+import Navbar from './components/navbar';
 
 export default function Home() {
   return (
