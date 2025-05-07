@@ -1,4 +1,7 @@
+const path = require('path');
+
 const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -6,7 +9,14 @@ const nextConfig = {
   },
   assetPrefix: isProd ? '/my-portfolio' : '',
   basePath: isProd ? '/my-portfolio' : '',
-  output: 'export'
+  output: 'export',
+  webpack(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@components': path.resolve(__dirname, 'src/components'), // Fixed alias path
+    };
+    return config;
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
